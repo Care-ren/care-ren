@@ -1,0 +1,13 @@
+[build]
+  publish = "."
+  command = ""
+
+[dev]
+  command = "lite-server"
+  port = 8888
+
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+

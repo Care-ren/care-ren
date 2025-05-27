@@ -1,0 +1,17 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "bilder"
+public_folder: "/bilder"
+
+collections:
+  - name: "studie"
+    label: "Studieplan"
+    folder: "innlegg/studie"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Tittel", name: "title", widget: "string" }
+      - { label: "Innhold", name: "body", widget: "markdown" }
+      - { label: "Bilde", name: "bilde", widget: "image", required: false }
