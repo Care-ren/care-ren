@@ -1,0 +1,154 @@
+body {
+  background: url('bilder/bakgrunn.png') repeat;
+  font-family: 'Comic Sans MS', cursive;
+  color: #660066;
+  margin: 0;
+  padding: 0;
+}
+
+.top-nav {
+  background-color: #ffd6ea;
+  border-bottom: 3px dashed #ff99cc;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.top-nav a {
+  display: inline-block;
+  margin: 0 15px;
+  text-decoration: none;
+  color: #800040;
+  background-color: #fff0f9;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 2px solid #ff99cc;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.top-nav a:hover {
+  background-color: #ffb3d1;
+  color: white;
+}
+
+#container {
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  margin: auto;
+  background-color: #fff0f8;
+  border: 5px double pink;
+  box-shadow: 0 0 20px #ffc1e3;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #ffe6f2;
+  padding: 20px;
+  border-right: 3px dashed #ff99cc;
+}
+
+.sidebar h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.button-link {
+  display: block;
+  background-color: #ffd6ea;
+  border: 2px solid #ff99cc;
+  padding: 8px 10px;
+  margin: 5px 0;
+  text-decoration: none;
+  color: #800040;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.button-link:hover {
+  background-color: #ffb3d1;
+  color: white;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff8fd;
+}
+
+.section-content {
+  display: none;
+}
+
+.section-content.active {
+  display: block;
+}
+
+main section {
+  margin-bottom: 40px;
+  background: #fff0f9;
+  border: 2px dotted #ffaacc;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 3px 3px #ffcce5;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #ffddee;
+  border-top: 3px dashed #ff99cc;
+}
+
+/* STUDIEVEI */
+#studievei {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffeaf4;
+  border: 2px dashed #ff99cc;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  overflow-x: auto;
+}
+
+.step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  font-weight: bold;
+  color: #990066;
+  cursor: pointer;
+}
+
+.step::before {
+  content: '⬤';
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #ff66b2;
+}
+
+.step.done::before {
+  content: '✔️';
+  color: #33cc99;
+}
+
+.pin {
+  position: absolute;
+  top: -5px; /* Så den ikke ligger for høyt */
+  left: 0;
+  transition: left 0.5s ease;
+  font-size: 24px;
+}
+
+.oppgave-innlegg img {
+  border-radius: 10px;
+  box-shadow: 0 0 5px #ffaacc;
+  display: block;
+  margin-top: 10px;
+  max-width: 100%;
+}

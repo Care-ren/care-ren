@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <title>Min blogg</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="top-nav">
+    <nav>
+      <a href="#home" class="top-link">Home</a>
+      <a href="#reise" class="top-link">Reise</a>
+      <a href="#bodycare" class="top-link">Bodycare</a>
+      <a href="#studie" class="top-link">Studie</a>
+    </nav>
+  </header>
+
+  <div id="container">
+    <aside class="sidebar" id="subnav">
+      <!-- Subnavigasjon vises dynamisk av JavaScript -->
+    </aside>
+
+    <main class="main-content" id="mainContent">
+      <section id="home" class="section-content">
+        <h2>✿ Velkommen til bloggen min</h2>
+        <p>Dette er min digitale dagbok for friåret mitt, med reiser, rutiner, studieplaner og mer. Kos deg med å utforske!</p>
+      </section>
+
+      <section id="reise" class="section-content">
+        <h2>✿ Reise</h2>
+        <p>Her kan du legge inn reiseinnlegg, bilder og dagboknotater!</p>
+      </section>
+
+      <section id="bodycare" class="section-content">
+        <h2>✿ Bodycare</h2>
+        <section id="facecare">
+          <h3>Facecare routine</h3>
+          <p>Her kan du skrive om ansiktspleierutinen din.</p>
+        </section>
+        <section id="haircare">
+          <h3>Haircare routine</h3>
+          <p>Her kan du beskrive hårrutinen din og produkter du bruker.</p>
+        </section>
+        <section id="skincare">
+          <h3>Skincare</h3>
+          <p>Legg inn produktanmeldelser og skincare-innlegg her.</p>
+        </section>
+      </section>
+
+      <section id="studie" class="section-content">
+        <h2>✿ Studie</h2>
+        <section id="studie-main">
+          <div id="studievei">
+            <div class="pin" id="pin">🎀</div>
+            <div class="step" data-id="sat">SAT</div>
+            <div class="step" data-id="engelsk">Engelsk test</div>
+            <div class="step" data-id="essay">Essay</div>
+            <div class="step" data-id="soknader">Søknader</div>
+            <div class="step" data-id="maal">🎓 Mål</div>
+          </div>
+
+          <div id="innlegg">
+            <div id="sat" class="oppgave-innlegg" style="display: none;">
+              <p>Min erfaring med SAT-testen vil vises her når den er lagt til.</p>
+              <button onclick="visRedigering('sat')">Rediger</button>
+            </div>
+            <div id="engelsk" class="oppgave-innlegg" style="display: none;">
+              <p>Min erfaring med engelsk språktest vil vises her når den er lagt til.</p>
+              <button onclick="visRedigering('engelsk')">Rediger</button>
+            </div>
+            <div id="essay" class="oppgave-innlegg" style="display: none;">
+              <p>Essay-refleksjoner kommer her.</p>
+              <button onclick="visRedigering('essay')">Rediger</button>
+            </div>
+            <div id="soknader" class="oppgave-innlegg" style="display: none;">
+              <p>Søknadsinnhold vil vises her når det er klart.</p>
+              <button onclick="visRedigering('soknader')">Rediger</button>
+            </div>
+          </div>
+        </section>
+
+        <section id="colleges">
+          <h3>Colleges</h3>
+          <p>Legg til ønskede studiesteder og informasjon om dem her.</p>
+        </section>
+      </section>
+
+      <section id="rediger" class="section-content" style="display:none">
+        <h2>🖋 Rediger studieinnlegg</h2>
+        <form id="redigerForm">
+          <input type="hidden" id="valg">
+
+          <label for="innhold">Innhold (du kan bruke HTML):</label>
+          <textarea id="innhold" rows="12" cols="60"></textarea>
+
+          <label for="bilde">Legg til bilde-URL (valgfritt):</label>
+          <input type="text" id="bilde" placeholder="https://...">
+
+          <button type="submit">Lagre</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>Laget med kjærlighet ✿ 2025</p>
+    </footer>
+
+    <script>
+      function visRedigering(id) {
+        document.querySelectorAll('.section-content').forEach(el => el.classList.remove('active'));
+        document.getElementById('rediger').style.display = 'block';
+        document.getElementById('rediger').classList.add('active');
+        document.getElementById('valg').value = id;
+        const target = document.getElementById(id);
+        const textarea = document.getElementById('innhold');
+        const bilde = document.getElementById('bilde');
+
+        textarea.value = target ? target.innerHTML.trim().replace(/<[^>]+>/g, '') : '';
+        bilde.value = '';
+      }
+    </script>
+  </div>
+</body>
+</html>
+</div>
+</body>
+</html>
